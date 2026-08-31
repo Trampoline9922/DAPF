@@ -11,10 +11,9 @@ The released code is intended to reproduce the node classification, node cluster
 
 ---
 
-1. Repository Structure
+## 1. Repository Structure
 
 A recommended directory structure is shown below:
-
 ```text
 DAPF/
 ├── main.py
@@ -35,8 +34,9 @@ DAPF/
 │   └── ...
 ├── requirements.txt
 └── README.md
+```
 
-2. Requirements
+## 2. Requirements
 The experiments are implemented in Python using PyTorch.
 The exact software versions used for the final experiments will be provided in requirements.txt.
 Main dependencies include:
@@ -51,7 +51,7 @@ To install the required packages, run:
 pip install -r requirements.txt
 The exact Python, PyTorch, CUDA, and GPU configurations used in the experiments will be reported in the final reproducibility package.
 
-3. Datasets
+## 3. Datasets
 Experiments are conducted on three widely used heterogeneous information network benchmarks:
 ACM
 DBLP
@@ -86,9 +86,9 @@ K = 9
 The hidden and embedding dimensions are:
 64
 Since the raw AMiner benchmark does not provide initial node attributes under the adopted preprocessing setting, the provided processed input features follow the same feature construction used in the reference benchmark.
-
 The exact processed data source, repository commit, and file checksums will be reported in the final release.
-4. Meta-Path Instance Sampling
+
+## 4. Meta-Path Instance Sampling
 DAPF performs online schema-constrained meta-path instance sampling during representation learning.
 For each target node and each meta-path:
 At each traversal hop, at most three neighboring nodes are uniformly sampled without replacement.
@@ -106,7 +106,7 @@ The full-model path budgets are:
 ACM:    K = 9
 DBLP:   K = 15
 AMiner: K = 9
-5. Randomness and Reproducibility
+## 5. Randomness and Reproducibility
 Several stages of the experimental pipeline involve stochastic operations. The released implementation explicitly controls and records the corresponding random seeds.
 
 5.1 Representation Learning
